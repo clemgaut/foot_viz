@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<script type=text/javascript>
+    {% autoescape false %}
+        var match_data = {{ data }};
+        console.log(match_data);
+    {% endautoescape %}
+</script>
