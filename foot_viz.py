@@ -3,6 +3,8 @@ from flask import Flask, request, redirect, flash, render_template, jsonify
 import jinja2
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():

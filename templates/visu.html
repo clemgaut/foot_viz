@@ -1,8 +1,12 @@
 <!doctype html>
 <title>Hello from Flask</title>
+<script src="{{url_for('static', filename='d3.min.js')}}"></script>
+<script src="{{url_for('static', filename='foot_viz.js')}}"></script>
 <script type=text/javascript>
     {% autoescape false %}
         var match_data = {{ data }};
         console.log(match_data);
+        var viz = new MatchEventViz(match_data);
+        viz.plot();
     {% endautoescape %}
 </script>
